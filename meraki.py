@@ -13,9 +13,9 @@ app = Flask(__name__)
 conf = ConfigParser()
 conf.read('meraki_ini.cnf')
 token = conf.get('section_one','meraki_token')
-#token = 'd5afcf40c119aa7a303e112ee4b73a4b2beac1fa'
+network_id = conf.get('section_one', 'network_id')
 
-api = '/networks/L_575897802350003738/devices'
+api = '/networks/{}/devices'.format(network_id)
 
 ipurl = '/devices/{}/clients'
 DAYS = list(range(1,31))
@@ -34,7 +34,7 @@ def home():
         days = int(days)
 
     tspan= days*86400
-    
+
     alldevices, keys = getdata(api)
 
     ip = getips(clients, alldevices, tspan)

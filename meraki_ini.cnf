@@ -1,2 +1,3 @@
 [section_one]
 meraki_token = **Enter your Meraki API Token here**
+network_id = **Enter your network_id here**
