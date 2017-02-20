@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Meraki Clients at HartZone</title>
+    </head>
+    <style>
+	html {
+    	font-family: "Helvetica";
+   	 background: white;
+	}
+
+	body {
+    	background: lightgrey;
+    	max-width: 900px;
+    	margin: 0 auto;
+	}
+          
+	#header {
+  		padding-top: 10;
+  		padding-left: 10;
+  		background: lightsteelblue;
+	}
+	#main{
+  		padding-left: 10;
+	}
+	input[type="text"], select {
+    	color: grey;
+    	border: 1px solid lightsteelblue;
+    	height: 30px;
+    	line-height:15px;
+    	margin: 2px 6px 16px 0px;
+		}
+	input[type="submit"] {
+    	padding: 5px 10px 5px 10px;
+    	color: black;
+    	background: lightsteelblue;
+    	border: none;
+    	box-shadow: 1px 1px 1px #4C6E91;
+		}
+		input[type="submit"]:hover{
+    	background: steelblue;
+		}
+	</style>
+    <body>
+        <div id="header">
+    		<h1>Meraki Clients @ HartZone</h1>
+    		
+    		<hr />
+    		
+		</div>
+		<div id="main"> 
+  		<h2>Choose Device and Timespan</h2>
+  		<form>
+    		Device: <select name="clients">
+            		{% for client in clients %}
+                          <option value="{{client}}">{{client}}</option>
+                    {% endfor %}
+          		</select>
+          		Time: <select name="days">
+            		{% for day in days %}
+                          <option value="{{day}}">{{day}}</option>
+                    {% endfor %}
+          		</select>
+
+    		 
+		 		<input type="submit" value="Submit">
+		</form>
+		
+		 
+		<h2>Devices on {{device}} for the last {{time}} days<h2><br />
+		
+		
+		
+        {% for ip in ip %}
+        <table> 
+        <col width="200">
+        <col width ='300'>
+        <TR>
+            {% for elem in ip %}
+            
+            <TD>{{elem}}</TD>
+            
+            {% endfor %}
+        </TR>
+        </table>
+            
+        {% endfor %}
+        </table>
+        <br />
+        </div>
+  		
