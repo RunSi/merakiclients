@@ -40,3 +40,5 @@ installation.
 From pip install the following
 
 Flask,  Netaddr,  Requests
+
+TO RUN -- python meraki.py  Then go to http://localhost:5000
