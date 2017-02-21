@@ -14,6 +14,7 @@ conf = ConfigParser()
 conf.read('meraki_ini.cnf')
 token = conf.get('section_one','meraki_token')
 network_id = conf.get('section_one', 'network_id')
+defaultdevice = conf.get('section_one', 'default_device')
 
 api = '/networks/{}/devices'.format(network_id)
 
@@ -25,7 +26,7 @@ DAYS = list(range(1,31))
 def home():
     clients = request.args.get('clients')
     if not clients:
-        clients = 'MR16'
+        clients = defaultdevice
 
     days = request.args.get('days')
     if not days:

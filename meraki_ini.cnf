@@ -1,3 +1,4 @@
 [section_one]
 meraki_token = **Enter your Meraki API Token here**
 network_id = **Enter your network_id here**
+default_device = **Enter your default Meraki device, e.g. MR16**

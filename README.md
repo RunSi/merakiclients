@@ -3,7 +3,7 @@
 The object of this script is to retrieve from the Meraki Dashboard API
 known clients from devices on a given network.
 
-The Meraki Dashboard API key and the Network ID need to be added to the
+The Meraki Dashboard API key, the Network ID and the Default Device need to be added to the
 meraki_ini.cnf file.
 
 API KEY
@@ -28,6 +28,10 @@ With organization ID enter the following
 
 curl -L -H 'X-Cisco-Meraki-API-Key:{{KEY}}’ -X GET -H 'Content-Type: application/json' 
 'https://dashboard.meraki.com/api/v0/organizations/{{ORG ID}}/networks'
+
+DEFAULT DEVICE  
+The default device should be any registered device that currently resides on the network.
+For example MR16 or MX60
 
 DEPENDENCIES
 This script relies on several external modules to be installed on your Python 3.X
