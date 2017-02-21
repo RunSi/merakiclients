@@ -59,43 +59,23 @@ def getips(client, alldevices,tspan):
         else:
             ipclient[(r_ip.value)] = [clientips[i]['description'], macadd.text]
     client = ipclient
-
     mylist = []
-    allips = []
 
     for i in sorted(client):
-
         myip = [str(netaddr.IPAddress(i))]
-
-
         myclient = client[i]
-
-
         mylist.append(myip + myclient)
-
-
-
     return mylist
 
 
 
 def getdata(api):
     merakiobj = getmeraki.objAPI(token)
-
     devices = merakiobj.get(api).json()
-
-    alldevices =['ALL']
-    serial = []
     devicedict={}
-
     for i, name in enumerate(devices):
-
         devicedict[devices[i]['model']]=devices[i]['serial']
     return devicedict, devicedict.keys()
-
-
-
-
 
 if __name__ =="__main__":
     app.run(port=5000, debug=True)
