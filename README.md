@@ -35,6 +35,4 @@ installation.
 
 From pip install the following
 
-Flask
-Netaddr
-Requests
+Flask,  Netaddr,  Requests
