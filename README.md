@@ -21,13 +21,13 @@ Postman in order to retrieve.
 Step 1
 Retrieve Organization ID
 
-curl -L -H 'X-Cisco-Meraki-API-Key:KEY’ -X GET -H 'Content-Type: application/json' 
+curl -L -H 'X-Cisco-Meraki-API-Key:**KEY**’ -X GET -H 'Content-Type: application/json' 
 'https://dashboard.meraki.com/api/v0/organizations'
 
 With organization ID enter the following
 
 curl -L -H 'X-Cisco-Meraki-API-Key:<KEY>’ -X GET -H 'Content-Type: application/json' 
-'https://dashboard.meraki.com/api/v0/organizations/<ORG ID>/networks'
+'https://dashboard.meraki.com/api/v0/organizations/**ORG ID**/networks'
 
 DEPENDENCIES
 This script relies on several external modules to be installed on your Python 3.X
